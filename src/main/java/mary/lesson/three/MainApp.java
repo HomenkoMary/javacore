@@ -6,6 +6,23 @@ public class MainApp {
     {
         String[] strArray = {"5", "7", "3", "17"};
         swapObj(strArray, 0, 2);
+
+        String message = new String();
+
+        Apple itemApple = new Apple();
+        Orange itemOrange = new Orange();
+
+        Box.Add(itemApple);
+        Box.Add(itemApple);
+        Box.Add(itemApple);
+
+        message = "Коробка c " + Box.getTypeBox() + " весит " + Box.getWeight() + "f";
+
+        System.out.println();
+
+        System.out.println(message);
+
+        Box.Add(itemOrange);
     }
 
     /**
