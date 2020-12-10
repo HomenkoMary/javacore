@@ -43,7 +43,11 @@ public class PhoneBook {
             System.out.println(String.format("Абонент %s не найден :(", abonentName));
             return null;
         }
+    }
 
+    public static String getAllRecord()
+    {
+        return PhoneBook.toString();
     }
 
 }
