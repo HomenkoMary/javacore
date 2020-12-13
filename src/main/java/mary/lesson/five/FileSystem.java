@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class FileSystem {
     private static String[] header;
-    private static int[][] data;
+    private static int[][] data = {{1,2,3},{3,2,1}};
 
     /**
      * write data to file
@@ -29,7 +29,7 @@ public class FileSystem {
         }
     }
 
-    public static void ReadDataToFile(String fileName) throws IOException
+    public static void ReadDataFromFile(String fileName) throws IOException
     {
         String line = "";
 
@@ -45,12 +45,14 @@ public class FileSystem {
                 }
                 else{
                     for (int j = 0; j < dataSet.length; j++) {
-                        data[i][j] = Integer.parseInt(dataSet[j]);
+                        data[i-1][j] = Integer.parseInt(dataSet[j]);
                     }
                 }
                 i++;
             }
             System.out.println(Arrays.toString(header));
+            System.out.println(Arrays.toString(data[0]));
+            System.out.println(Arrays.toString(data[1]));
         } catch (IOException e) {
             e.printStackTrace();
         }
