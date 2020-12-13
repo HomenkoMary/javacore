@@ -1,21 +1,29 @@
 package mary.lesson.three;
 
-public abstract class Fruit {
+public abstract class Fruit<T> {
 
+    private T obj;
     private float weight;
-    private String type;
 
-    public Fruit(float weight, String type)
+    public Fruit(T оbj) {
+        this.obj = оbj;
+    }
+
+    public T getObj() {
+        return obj;
+    }
+
+    public String getType() {
+        return obj.getClass().getName();
+    }
+
+    public Fruit(float weight)
     {
         this.weight = weight;
-        this.type = type;
     }
 
     float getWeight() {
         return weight;
     }
 
-    String getType(){
-        return type;
-    }
 }

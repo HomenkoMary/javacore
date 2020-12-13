@@ -9,20 +9,31 @@ public class MainApp {
 
         String message = new String();
 
+        System.out.println("============");
+
         Apple itemApple = new Apple();
         Orange itemOrange = new Orange();
 
-        Box.Add(itemApple);
-        Box.Add(itemApple);
-        Box.Add(itemApple);
+        Box boxApple = new Box(itemApple);
+        boxApple.Add(itemApple);
+        boxApple.Add(itemApple);
 
-        message = "Коробка c " + Box.getTypeBox() + " весит " + Box.getWeight() + "f";
-
+        message = "Коробка c " + boxApple.getType() + " весит " + boxApple.getWeight() + "f";
         System.out.println();
-
         System.out.println(message);
 
-        Box.Add(itemOrange);
+        System.out.println("-------");
+
+        Box boxOrange = new Box(itemOrange);
+        boxOrange.Add(itemOrange);
+        boxOrange.Add(itemOrange);
+
+        message = "Коробка c " + boxOrange.getType() + " весит " + boxOrange.getWeight() + "f";
+        System.out.println();
+        System.out.println(message);
+
+        System.out.println(Box.Compare(boxOrange));
+
     }
 
     /**
