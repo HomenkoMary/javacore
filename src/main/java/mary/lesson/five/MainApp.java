@@ -11,6 +11,6 @@ public class MainApp {
         String dataSet = mary.lesson.four.PhoneBook.getAllRecord();
         FileSystem.WriteDataToFile(dataSet);
 
-        FileSystem.ReadDataToFile("dataForRead.txt");
+        FileSystem.ReadDataFromFile("dataForRead.txt");
     }
 }
