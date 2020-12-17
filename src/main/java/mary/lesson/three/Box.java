@@ -2,35 +2,49 @@ package mary.lesson.three;
 
 public class Box  {
 
+    private static Fruit item;
     private static float weight;
-    private static String typeBox = "";
 
-    public static void Add(Fruit item)
+    public Box(Fruit item) {
+        Box.item = item;
+        Box.weight = 0;
+    }
+
+    public void Add(Fruit item)
     {
-        if (typeBox == "") {
-            // создаем новую коробку с указанным типом
-            typeBox = item.getType();
-            weight += item.getWeight();
+        if (CompareType(item)) {
+            Box.weight += Box.item.getWeight();
         }
         else{
-            if (typeBox == item.getType()){
-                // если тип коробкит соответствет переданному типу фрукта
-                weight += item.getWeight();
-            }
-            else {
-                System.out.println("Нельзя положить " + item.getType() + " в коробку с " + typeBox);
-            }
+            System.out.println("Нельзя положить " + item.getType() + " в коробку с " + Box.item.getType());
         }
+    }
+
+    private static Boolean CompareType(Fruit compareItem)
+    {
+        Boolean result = false;
+        if (compareItem.getType() == Box.item.getType()) {
+            result = true;
+        }
+        return result;
+    }
+
+    public static boolean Compare(Box compareItem)
+    {
+        Boolean result = false;
+        if (compareItem.getWeight() == getWeight()){
+            result = true;
+        }
+        return result;
     }
 
     public static float getWeight()
     {
-        return weight;
+        return Box.weight;
     }
 
-    public static String getTypeBox()
+    public static String getType()
     {
-        return typeBox;
+        return Box.item.getType();
     }
-
 }
